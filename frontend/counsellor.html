@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Student - MindCare</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="assets/common.js" defer></script>
+  <script src="assets/student.js" defer></script>
+</head>
+<body>
+  <div class="header">
+    <div class="brand"><div class="logo">MC</div>
+      <div><div class="title">Student Panel</div><div class="small">Login with USN</div></div></div>
+
+    <div class="search"><input id="searchInput" placeholder="Search your concerns" /></div>
+
+    <div class="controls">
+      <button class="btn" onclick="location.href='index.html'">Home</button>
+      <button id="themeToggle" class="btn">🌙</button>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="left">
+      <h3>Register</h3>
+      <input id="regUsn" placeholder="USN (e.g. 1BG22CS001)" />
+      <select id="regDept">
+        <option value="">Select Department</option>
+        <option>CSE</option><option>AI&ML</option><option>ECE</option><option>ME</option><option>CIVIL</option>
+      </select>
+      <select id="regCounsellor"><option>Select department first</option></select>
+
+      <select id="regQuestion">
+        <option value="">Select Security Question</option>
+        <option>What is your birth year?</option>
+        <option>What is your hometown?</option>
+      </select>
+
+      <input id="regAnswer" placeholder="Security Answer" />
+      <input id="regPwd" type="password" placeholder="Password" />
+      <button class="btn" id="btnRegister">Register</button>
+
+      <hr />
+
+      <h3>Login</h3>
+      <input id="loginUsn" placeholder="USN" />
+      <input id="loginPwd" type="password" placeholder="Password" />
+      <button class="btn" id="btnLogin">Login</button>
+      <button class="btn" id="btnForgot" style="background:#0ea5e9">Forgot Password?</button>
+    </div>
+
+    <div class="right">
+      <div class="input-row">
+        <input id="concernInput" placeholder="Type your concern..." />
+        <button class="btn" id="btnSend">Send</button>
+      </div>
+
+      <div class="chat" id="chatArea"></div>
+      <div class="footer small">Logged in as: <span id="loggedUsn">None</span></div>
+    </div>
+  </div>
+
+  <!-- Forgot Password Box -->
+  <div id="forgotBox" class="forgot-box" style="display:none;">
+    <h3>Reset Password</h3>
+    <input id="fpUsn" placeholder="Enter your USN" />
+    <button class="btn" id="fpGetQuestion">Next</button>
+
+    <div id="questionArea" style="display:none">
+      <p id="fpQuestion" class="accent"></p>
+      <input id="fpAnswer" placeholder="Enter your answer" />
+      <button class="btn" id="fpVerify">Verify</button>
+    </div>
+
+    <div id="resetArea" style="display:none">
+      <input id="fpNewPass" type="password" placeholder="New Password" />
+      <button class="btn" id="fpReset">Reset Password</button>
+    </div>
+    <div style="margin-top:10px"><button class="btn" onclick="closeForgot()">Close</button></div>
+  </div>
+</body>
+</html>

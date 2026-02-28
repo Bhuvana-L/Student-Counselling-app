@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Counsellor Dashboard — MindCare</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/common.js" defer></script>
+  <script src="assets/counsellor_dashboard.js" defer></script>
+</head>
+<body data-theme="dark">
+  <div class="topbar container">
+    <div class="brand">
+      <div class="logo">MC</div>
+      <div>
+        <div id="cTitle" class="brand-text">Counsellor</div>
+        <div id="cDept" class="small muted">Dept</div>
+      </div>
+    </div>
+
+    <div>
+      <button id="themeToggle" class="btn icon-btn">🌓</button>
+      <button class="btn btn-ghost" onclick="logoutCounsellor()">Logout</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="panel animate-panel">
+      <h3>Assigned Concerns</h3>
+      <div id="concernList" style="margin-top:12px">
+        <!-- concern cards injected here -->
+      </div>
+    </section>
+
+    <section class="panel animate-panel" id="replyBox" style="display:none;margin-top:18px">
+      <p><strong>USN:</strong> <span id="replyUsn"></span></p>
+      <p><strong>Concern:</strong></p>
+      <p id="replyConcernText" style="white-space:pre-wrap"></p>
+      <p class="small muted">AI suggestion:</p>
+      <p id="replyAIText" class="ai-box"></p>
+      <label>Write your reply</label>
+      <textarea id="replyText"></textarea>
+      <button id="sendReplyBtn" class="btn" style="margin-top:10px">Send Reply</button>
+    </section>
+  </main>
+</body>
+</html>

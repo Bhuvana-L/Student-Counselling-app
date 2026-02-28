@@ -1,0 +1,91 @@
+:root{
+  --bg:#0f2b1e;
+  --panel:#174a32;
+  --card-green:#1f5c42;
+  --card-brown:#5a3e2b;
+  --accent:#c9a066;
+  --text:#f3f7f4;
+  --muted:#d4e3d9;
+  --shadow: rgba(0,0,0,0.35);
+}
+
+/* light theme available */
+[data-theme="light"]{
+  --bg:#f6f8f4;
+  --panel:#ffffff;
+  --card-green:#e9f7ee;
+  --card-brown:#f4efe7;
+  --accent:#9b6b3c;
+  --text:#10211a;
+  --muted:#6b6b6b;
+}
+
+*{box-sizing:border-box}
+body{margin:0;font-family:"Poppins",system-ui,Arial;background:linear-gradient(180deg,#0d241a,#1c3b2c);color:var(--text);min-height:100vh}
+.container{width:95%;max-width:1200px;margin:18px auto;padding:0 12px}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#2c7a4b,#4fac76);display:flex;align-items:center;justify-content:center;font-weight:800;color:#001}
+.brand-text{font-weight:700;font-size:18px}
+.panel{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:18px;box-shadow:0 10px 30px var(--shadow);border:1px solid rgba(255,255,255,0.02)}
+.form-panel{max-width:720px;margin:16px auto}
+input,select,textarea{width:100%;padding:12px;margin-top:8px;border-radius:12px;border:none;background:rgba(255,255,255,0.03);color:var(--text);outline:none}
+textarea{min-height:110px;resize:vertical}
+label{font-size:13px;color:var(--muted);margin-top:10px;display:block}
+.btn{padding:10px 16px;border-radius:12px;background:linear-gradient(90deg,#4caf74,#7fd9a6);border:none;color:#001;font-weight:700;cursor:pointer}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)}
+.icon-btn{background:transparent;border:none;color:var(--text);font-size:18px;cursor:pointer}
+.small{font-size:12px;color:var(--muted)}
+.muted{color:var(--muted)}
+.link{color:var(--accent);text-decoration:none;font-weight:600}
+
+.animate-panel{animation:cardIn .64s cubic-bezier(.2,.9,.2,1)}
+@keyframes cardIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+
+/* big premium card */
+.big-card{
+  width:100%;
+  background:linear-gradient(135deg,#244d36,#1a3928);
+  border-radius:28px;
+  padding:26px;
+  margin:20px 0;
+  box-shadow:0 14px 36px rgba(0,0,0,0.5);
+  border-left:8px solid var(--accent);
+  position:relative;
+  overflow:hidden;
+}
+
+/* leaf motion: subtle swaying using transform */
+.big-card::before{
+  content:"";
+  position:absolute;right:-40px;top:-40px;width:240px;height:240px;
+  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.03), transparent 20%),
+             radial-gradient(circle at 70% 70%, rgba(0,0,0,0.03), transparent 30%);
+  transform:rotate(14deg);
+  opacity:0.7;
+  border-radius:40%;
+  animation:leafSway 6s ease-in-out infinite;
+}
+@keyframes leafSway{
+  0%{transform:translateY(0) rotate(12deg)}
+  50%{transform:translateY(6px) rotate(8deg)}
+  100%{transform:translateY(0) rotate(12deg)}
+}
+
+.big-card p{font-size:17px;margin:10px 0;color:var(--text)}
+.reply{color:#7dffbc;font-weight:700}
+.no-reply{color:#ffb1b1}
+.time{font-size:13px;opacity:0.8}
+
+/* counsellor reply box */
+.ai-box{background:rgba(255,255,255,0.02);padding:10px;border-radius:10px;color:var(--muted);margin-bottom:8px}
+
+/* concern item for counsellor list */
+.concern-item{padding:14px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));margin-top:10px;cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+.concern-item:hover{transform:translateY(-6px);box-shadow:0 22px 46px rgba(0,0,0,0.45)}
+
+/* reply panel */
+#replyBox{display:none}
+
+/* responsive */
+@media (max-width:720px){ .container{width:96%} .big-card{padding:18px;border-radius:18px} .brand-text{display:none} }

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Student Registration — MindCare</title>
+
+<link rel="stylesheet" href="assets/css/style.css" />
+<script src="assets/student_register.js" defer></script>
+
+<style>
+  .register-box {
+    max-width: 520px;
+    margin: 25px auto;
+    background: var(--card);
+    padding: 26px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    animation: fadeIn 0.6s ease;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: var(--accent);
+  }
+</style>
+
+</head>
+<body>
+
+<div class="page">
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+      <div class="brand">
+          <div class="logo">MC</div>
+          <div class="brand-text">MindCare</div>
+      </div>
+  </div>
+
+  <!-- REGISTER PANEL -->
+  <div class="register-box animate-panel">
+      <h2>Student Registration</h2>
+
+      <label>USN</label>
+      <input type="text" id="regUSN" placeholder="Enter USN">
+
+      <label>Department</label>
+      <select id="regDept">
+          <option value="">Select Department</option>
+          <option value="CSE">CSE</option>
+          <option value="ISE">ISE</option>
+          <option value="ECE">ECE</option>
+          <option value="AIML">AIML</option>
+          <option value="CIVIL">CIVIL</option>
+      </select>
+
+      <label>Select Counsellor</label>
+      <select id="regCounsellor"></select>
+
+      <label>Birth Year</label>
+      <input type="number" id="regBirth" placeholder="2004">
+
+      <label>Hometown</label>
+      <input type="text" id="regHome" placeholder="Enter your hometown">
+
+      <label>Password</label>
+      <input type="password" id="regPass" placeholder="Create password">
+
+      <button class="btn" id="btnRegister" style="margin-top:14px;">Register</button>
+      <p class="small" style="margin-top:10px; text-align:center;">
+          Already have an account? <a href="student_login.html">Login</a>
+      </p>
+  </div>
+
+</div>
+</body>
+</html>

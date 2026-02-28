@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Login — MindCare</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/common.js" defer></script>
+  <script src="assets/student_login.js" defer></script>
+</head>
+<body data-theme="dark">
+  <div class="topbar container">
+    <div class="brand">
+      <div class="logo">MC</div>
+      <div class="brand-text">Student Login</div>
+    </div>
+    <div>
+      <button id="themeToggle" class="btn icon-btn">🌓</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="panel form-panel animate-panel">
+      <label>USN</label>
+      <input id="loginUSN" placeholder="4GW24IS001" />
+
+      <label>Password</label>
+      <input id="loginPASS" type="password" placeholder="Password" />
+
+      <div class="actions">
+        <button id="btnLogin" class="btn">Login</button>
+        <a href="student_register.html" class="btn btn-ghost">Register</a>
+      </div>
+
+      <p class="small" style="margin-top:12px"><a class="link" id="showForgot" href="#">Forgot password?</a></p>
+
+      <div id="forgotBox" style="display:none;margin-top:12px;">
+        <label>USN</label><input id="fpUsn" placeholder="USN" />
+        <label>Birth Year</label><input id="fpYear" placeholder="2003" />
+        <label>Hometown</label><input id="fpTown" placeholder="Hometown" />
+        <label>New Password</label><input id="fpNew" type="password" />
+        <button id="btnReset" class="btn" style="margin-top:8px">Reset Password</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

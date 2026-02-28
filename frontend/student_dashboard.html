@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Student Dashboard — MindCare</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/common.js" defer></script>
+  <script src="assets/student_dashboard.js" defer></script>
+</head>
+<body data-theme="dark">
+  <div class="topbar container">
+    <div class="brand">
+      <div class="logo">MC</div>
+      <div>
+        <div id="studentName" class="brand-text">Student</div>
+        <div id="studentDept" class="small muted">Dept</div>
+      </div>
+    </div>
+
+    <div>
+      <button id="themeToggle" class="btn icon-btn">🌓</button>
+      <button id="logoutBtn" class="btn btn-ghost">Logout</button>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="panel animate-panel">
+      <label>Report a Concern</label>
+      <textarea id="concernInput" placeholder="Type your concern (confidential)"></textarea>
+      <div style="display:flex;gap:12px;margin-top:12px">
+        <button id="btnSend" class="btn">Send</button>
+        <div style="flex:1"></div>
+      </div>
+    </section>
+
+    <section id="concernBox" class="panel animate-panel" style="margin-top:22px;">
+      <!-- big cards injected here -->
+    </section>
+  </main>
+</body>
+</html>
