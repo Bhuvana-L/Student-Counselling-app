@@ -21,7 +21,7 @@ app.use("/api/ai", aiRoutes);
 
 // ---------- CONNECT MONGO ----------
 mongoose
-  .connect(process.env.MONGO_URL)   // ✅ no extra options needed in Mongoose v6+
+  .connect(process.env.MONGO_URL)   //no extra options needed in Mongoose v6+
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.error("MongoDB connection error:", err));
 
