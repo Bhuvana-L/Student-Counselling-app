@@ -8,11 +8,11 @@ dotenv.config();
 
 async function seed() {
   if (!process.env.MONGO_URL) {
-    console.error("❌ MONGO_URL missing in .env");
+    console.error(" MONGO_URL missing in .env");
     process.exit(1);
   }
 
-  // ✅ No extra options needed in Mongoose v6+
+  // No extra options needed in Mongoose v6+
   await mongoose.connect(process.env.MONGO_URL);
 
   console.log("Connected to MongoDB for seeding...");
@@ -43,7 +43,7 @@ async function seed() {
 
   await Counsellor.insertMany(counsellors);
 
-  // ⭐ Sample Test Student
+  // Sample Test Student
   await Student.create({
     usn: "4GW24IS001",
     department: "ISE",
@@ -53,7 +53,7 @@ async function seed() {
     password: await bcrypt.hash("student123", 10)
   });
 
-  console.log("🌱 Seed completed: 18 counsellors + 1 student created.");
+  console.log(" Seed completed: 18 counsellors + 1 student created.");
   await mongoose.connection.close();
 }
 
